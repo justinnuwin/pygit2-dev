@@ -1,0 +1,6 @@
+[submodule "dep-repo/libgit2"]
+	path = dep-repo/libgit2
+	url = https://github.com/libgit2/libgit2.git
+[submodule "dep-repo/pygit2"]
+	path = dep-repo/pygit2
+	url = https://github.com/libgit2/pygit2.git
