@@ -1,6 +1,8 @@
 # Pygit2 Windows Build Instructions
 
-# Requirements
+Sample scripts which build libgit2 and pygit2 natively for Windows are provided in `scripts/`.
+
+## Requirements
 
 - CMake (v2.8+ <- libgit2)
 - MinGW necessary for openssl and ssh support
