@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Rebuild pygit2" type="CompoundRunConfigurationType">
+    <toRun name="Install pygit2" type="PythonConfigurationType" />
+    <toRun name="Build pygit2" type="PythonConfigurationType" />
+    <method v="2" />
+  </configuration>
+</component>
