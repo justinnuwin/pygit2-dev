@@ -14,7 +14,7 @@ Sample scripts which build libgit2 and pygit2 natively for Windows are provided 
 `LIBGIT2` environmental variable must be exported to some path
 
 
-## Compile libgit2 native indows:
+## Compile libgit2 native Windows:
 
 ```bash
 PS> cmake .. -DBUILD_CLAR=OFF -DTHREADSAFE=ON -DCMAKE_LIBRARY_PATH="path\to\mingw64\lib" -DUSE_SSH=OFF -DCMAKE_INSTALL_PREFIX=$Env:LIBGIT2  # -DBUILD_SHARED_LIBS=OFF
@@ -48,6 +48,25 @@ pip3 install pygit2   # Or alternatively install via Pycharm
 PS> python setup.py build
 PS> python setup.py install
 ```
+
+Note that if the user does not have admin access, the `--user` flag needs to be appeneded to the `install` command to install the module to the user's `site-packages`.
+
+Run the test, `backend.py` script. If you get the following error:
+
+```
+Traceback (most recent call last):
+  File "C:\Users\nguyen104\pygit2-dev\backend.py", line 1, in <module>
+    import pygit2
+  File "C:\Users\nguyen104\AppData\Roaming\Python\Python39\site-packages\pygit2-1.6.1-py3.9-win-amd64.egg\pygit2\__init__.py", line 30, in <module>
+    from ._pygit2 import *
+ImportError: DLL load failed while importing _pygit2: The specified module could not be found.
+```
+
+Copy `git2.dll` in `dep-repo/build/bin/` to where the module was installed to.
+
+You can determine where the module was installed by looking at the output from the above install command:
+
+`Installed c:\users\nguyen104\appdata\roaming\python\python39\site-packages\pygit2-1.6.1-py3.9-win-amd64.egg` 
 
 ## Build Pygit2 (development version - MinGW) -- NOT WORKING (unable to correctly load CPython module)
 

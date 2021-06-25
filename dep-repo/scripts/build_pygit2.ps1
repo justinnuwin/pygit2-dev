@@ -1,5 +1,8 @@
 # This script needs to be run from scripts/
 
+pip install wheel --user
+pip install six --user
+
 Set-Location "..\pygit2"
 
 # These paths relative to both pygit2/ and scripts/
