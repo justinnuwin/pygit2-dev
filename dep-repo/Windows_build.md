@@ -49,7 +49,7 @@ PS> python setup.py build
 PS> python setup.py install
 ```
 
-Note that if the user does not have admin access, the `--user` flag needs to be appeneded to the `install` command to install the module to the user's `site-packages`.
+Note that if the user does not have admin access, the `--user` flag needs to be appended to the `install` command to install the module to the user's `site-packages`.
 
 Run the test, `backend.py` script. If you get the following error:
 
@@ -62,11 +62,13 @@ Traceback (most recent call last):
 ImportError: DLL load failed while importing _pygit2: The specified module could not be found.
 ```
 
-Copy `git2.dll` in `dep-repo/build/bin/` to where the module was installed to.
+Copy `git2.dll` in `dep-repo\build\bin\` to where the module was installed to.
 
-You can determine where the module was installed by looking at the output from the above install command:
+You can determine where the module was installed by looking at the output from the above install command (you sould see a line reading): `Installed c:\users\nguyen104\appdata\roaming\python\python39\site-packages\pygit2-1.6.1-py3.9-win-amd64.egg`
 
-`Installed c:\users\nguyen104\appdata\roaming\python\python39\site-packages\pygit2-1.6.1-py3.9-win-amd64.egg` 
+Copy the dll:
+
+`cp dep-repo\build\bin\git2.dll c:\users\nguyen104\appdata\roaming\python\python39\site-packages\pygit2-1.6.1-py3.9-win-amd64.egg\pygit2`
 
 ## Build Pygit2 (development version - MinGW) -- NOT WORKING (unable to correctly load CPython module)
 
