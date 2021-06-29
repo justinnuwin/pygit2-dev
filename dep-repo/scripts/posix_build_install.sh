@@ -15,8 +15,8 @@ cmake --build . --target install
 popd
 
 pushd pygit2
-CPATH=$LIBGIT2/include LIBRARY_PATH=$LIBGIT2/lib* CFLAGS="-O0 -g -std=c11" python3 build_ext --inplace
-python3 install
+CPATH=$LIBGIT2/include LIBRARY_PATH=$LIBGIT2/lib* CFLAGS="-O0 -g -std=c11" python3 setup.py build_ext --inplace
+python3 setup.py install
 popd
 
 popd
